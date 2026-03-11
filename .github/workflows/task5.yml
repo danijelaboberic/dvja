@@ -40,7 +40,7 @@ jobs:
           run: grype sbom:dvja-create-sbom.cyclonedx.json > sca_result.txt
           
         - name: Upload SCA result
-          uses: actions/upload-artifact@V4
+          uses: actions/upload-artifact@v4
           with:
             name: sca-report
             path: sca_result.txt
