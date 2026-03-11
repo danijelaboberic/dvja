@@ -28,7 +28,9 @@ jobs:
          format: cyclonedx-json
          output-file: sbom.json
       
-      - name: Scan vulnerabilities using Grype
-        uses: anchore/scan-action@v3
-        with:
-          sbom: sbom.json
+      - name: Install Grype
+        run: curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
+      
+      - name: scan SBOM 
+        run: grype sbom:./sbom.json
+
