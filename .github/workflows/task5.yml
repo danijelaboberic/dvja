@@ -1,6 +1,6 @@
 name: SBOM and SCA using grype
 on: 
-  workflow_dispatch
+  workflow_dispatch:
 jobs:
   create-sbom:
     runs-on: ubuntu-latest
