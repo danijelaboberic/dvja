@@ -1,4 +1,4 @@
-name: SBOM generation using syft prebuild action
+name: SBOM and SCA using grype
 on: 
   workflow_dispatch
 jobs:
