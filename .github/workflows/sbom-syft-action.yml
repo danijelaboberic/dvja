@@ -32,4 +32,3 @@ jobs:
         uses: anchore/scan-action@v3
         with:
           sbom: sbom.json
-          fail-build: false
