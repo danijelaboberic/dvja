@@ -20,15 +20,8 @@ jobs:
 
       - name: Build Maven project
         run: mvn -B clean package -DskipTests
-
-      - name: Install Snyk CLI
-        run: npm install -g snyk
-
-      - name: Authenticate Snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
-
-      - name: Run Snyk SAST scan
-        run: snyk code test
-
-      - name: Run Snyk Open Source scan (dependencies)
-        run: snyk test
+        
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
