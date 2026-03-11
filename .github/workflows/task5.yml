@@ -24,7 +24,7 @@ jobs:
          path: .
          format: cyclonedx-json
          output-file: sbom.json
-   vulnerability-scan:
+  vulnerability-scan:
       runs-on: ubuntu-latest
       needs: create-sbom
       steps:
