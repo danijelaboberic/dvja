@@ -38,4 +38,10 @@ jobs:
           run: curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
   
         - name: Scan SBOM with Grype
-          run: grype sbom:dvja-generate-sbom.cyclonedx.json
+          run: grype sbom:dvja-generate-sbom.cyclonedx.json > sca_result.txt
+        
+        - name: Upload SCA result
+          uses: actions/upload-artifact@v4
+          with:
+            name: sca-result
+            path: sca_result.txt
