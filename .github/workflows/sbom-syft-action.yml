@@ -35,7 +35,7 @@ jobs:
       - name: Download SBOM artifact
         uses: actions/download-artifact@v4
         with:
-          name: sbom
+          name: dvja-generate-sbom.cyclonedx.json
 
       - name: Install Grype
         run: curl -sSfL https://get.anchore.io/grype | sudo sh -s -- -b /usr/local/bin
