@@ -33,6 +33,3 @@ jobs:
         with:
           sbom: sbom.json
           fail-build: false
-        with:
-          name: sbom-report
-          path: sbom.json
