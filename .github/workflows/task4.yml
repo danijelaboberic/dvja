@@ -1,4 +1,4 @@
-name: SBOM generation
+name: SBOM generation using syft prebuild action
 on: 
   workflow_dispatch
 jobs:
